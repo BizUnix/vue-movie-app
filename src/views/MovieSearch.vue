@@ -181,7 +181,7 @@
     "perPage": 15
   } )
   var where = ref({
-    "search": searchString.value 
+    "search": "" 
   })
   
   export default {
@@ -230,8 +230,10 @@
         currentPage.value = page
       },
       searchMovies() {
+        currentPage.value = 1
+        filter.value = ''
         console.log(searchString.value)
-        where.value.search = searchString
+        where.value.search = searchString.value
       },
       clearFilters(){
         console.log(filter.value)

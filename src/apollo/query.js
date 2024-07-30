@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 const Movies_Query = gql`
-    query Movies($pagination: PaginationInput) {
-        movies(pagination: $pagination) {
+    query Movies($pagination: PaginationInput, $where: MovieFilterInput) {
+        movies(pagination: $pagination, where: $where) {
           nodes {
             title
             duration
